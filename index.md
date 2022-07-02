@@ -5,5 +5,5 @@ title: "Home"
 
 Insert Description Here
 
-Link to Resume: {% link /Resume_Sp2022.pdf %}
-[Aditya Dutt's Resume]
+Link to Resume: [Aditya Dutt's Resume]{% link Resume_Sp2022.pdf %}
+
