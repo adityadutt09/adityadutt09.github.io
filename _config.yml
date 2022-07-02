@@ -1,6 +1,6 @@
 title: "Aditya's Portfolio"
 author: "Aditya Dutt"
-description: "Nice to meet you! I'm Aditya, a Senior at UIUC studying Engineering Mechanics"
+description: "Made using Contrast Theme from Jekyll Themes"
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
