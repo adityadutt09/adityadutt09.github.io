@@ -3,7 +3,7 @@
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
-  position: relative;
+  position: center;
   margin: auto;
 }
 
@@ -44,7 +44,7 @@
   color: #f2f2f2;
   font-size: 15px;
   padding: 8px 12px;
-  position: absolute;
+  position: center;
   bottom: 8px;
   width: 100%;
   text-align: center;
@@ -55,7 +55,7 @@
   color: #f2f2f2;
   font-size: 12px;
   padding: 8px 12px;
-  position: absolute;
+  position: right;
   top: 0;
 }
 
