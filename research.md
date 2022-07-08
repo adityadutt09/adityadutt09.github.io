@@ -23,4 +23,4 @@ After my independent study I took part in a research project in the [Immersive L
 This project was extremely fun and interesting as it not only improved my coding skills but also taught me a lot about game design and development as well as the fundamental ideas behind creating a virtual immersive environment.
 
 ## 4. Soft Robotics Research (May 2022 - Present)
-###  Research Mentors: Prof. Prashant Mehta, Coordinated Science Laboratory, UIUC
+###  Research Mentor: Prof. Prashant Mehta, Coordinated Science Laboratory, UIUC
