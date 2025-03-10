@@ -1,0 +1,14 @@
+{% comment %} ...existing code... {% endcomment %}
+{% assign icon_class = "" %}
+{% case link.title %}
+  {% when "Mail" %}
+    {% assign icon_class = "fa-envelope" %}
+  {% when "Github" %}
+    {% assign icon_class = "fa-github" %}
+  {% when "LinkedIn" %}
+    {% assign icon_class = "fab fa-linkedin" %}
+  {% else %}
+    {% assign icon_class = "fa-external-link-alt" %}
+{% endcase %}
+<i class="{{ icon_class }}"></i>
+{% comment %} ...existing code... {% endcomment %}
