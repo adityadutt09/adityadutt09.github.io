@@ -23,6 +23,6 @@ title: "Teaching Experience"
 
 ### <span style="color: #99ff99;">Additional Teaching roles</span>
 - **Exam Review Session Director, TAM 470: Computational Mechanics** (Fall 2022) - [Course Website](https://courses.illinois.edu/schedule/2022/fall/TAM/470)
-- **CARE Tutor and Peer Mentor** (Center for Academic Resources in Engineering) (Jan 2021 - May 2023) - [CARE Website](https://care.grainger.illinois.edu/)
+- **Center for Academic Resources in Engineering Tutor & Peer Mentor** (Jan 2021 - May 2023) - [CARE Website](https://care.grainger.illinois.edu/)
 
 
