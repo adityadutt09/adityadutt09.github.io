@@ -2,7 +2,7 @@
 layout: page
 title: "Research Experience"
 ---
-<div style="background-color: #f4f4f4; padding: 20px;">
+<!-- <div style="background-color: #f4f4f4; padding: 20px;"> -->
 
 ## <span style="color: #ff9999;">Research @ Stanford</span>
 - **Multi-Robot Collaboration Research (Nvidia, MuJoCo)** ([GitHub](https://github.com/vignesh-anand/robot-collab-v2/tree/aditya)) (Mar 2024 - Dec 2024)
@@ -58,4 +58,4 @@ This project was extremely fun and interesting as it not only improved my coding
 ## 4. Soft Robotics Research (May 2022 - Present)
 ###  Research Mentor: Prof. Prashant Mehta, Coordinated Science Laboratory, UIUC -->
 
-</div>
+<!-- </div> -->
