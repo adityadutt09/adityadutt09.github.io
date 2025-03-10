@@ -2,6 +2,7 @@
 layout: page
 title: "Research Experience"
 ---
+<div style="background-color: #f4f4f4; padding: 20px;">
 
 Research has played a strong role in my undergraduate program as I have been performing undergraduate research since Sophomore year. It has taught me a lot about the current fields of interest in the academic world and has led me to appreciate and become passionatie about performing research in some of these fields. 
 
@@ -24,3 +25,5 @@ This project was extremely fun and interesting as it not only improved my coding
 
 ## 4. Soft Robotics Research (May 2022 - Present)
 ###  Research Mentor: Prof. Prashant Mehta, Coordinated Science Laboratory, UIUC
+
+</div>
