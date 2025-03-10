@@ -3,6 +3,10 @@ layout: page
 title: "Teaching Experience"
 ---
 
+<style>
+  body { background-color: white !important; color: black; }
+</style>
+
 # Teaching Experience
 
 ## TA Roles

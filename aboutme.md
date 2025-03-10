@@ -5,6 +5,10 @@ title: "About Me"
 
 ---
 
+<style>
+  body { background-color: white !important; color: black; }
+</style>
+
 Education:
 - Bachelor of Science from University of Illinois at Urbana-Champaign (Highest Honors)
 - Master of Science from Stanford University. 
