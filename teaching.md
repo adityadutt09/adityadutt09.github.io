@@ -7,7 +7,6 @@ title: "Teaching Experience"
   body { background-color: white !important; color: black; }
 </style>
 
-# Teaching Experience
 
 ## TA Roles
 
@@ -22,7 +21,6 @@ title: "Teaching Experience"
 - **TAM 330: Fluid Mechanics** (Fall 2022) - [Course Website](https://courses.illinois.edu/schedule/2022/fall/TAM/335)
 - **Math 257: Linear Algebra with Python Applications** (Summer 2021) - [Course Website](https://netmath.illinois.edu/summer/math-257)
 
-## Additional Teaching Roles
 ### <span style="color: #99ff99;">Additional Teaching roles</span>
 - **Exam Review Session Director, TAM 470: Computational Mechanics** (Fall 2022) - [Course Website](https://courses.illinois.edu/schedule/2022/fall/TAM/470)
 - **CARE Tutor and Peer Mentor** (Center for Academic Resources in Engineering) (Jan 2021 - May 2023) - [CARE Website](https://care.grainger.illinois.edu/)
