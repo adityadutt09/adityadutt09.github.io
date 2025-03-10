@@ -11,12 +11,13 @@ title: "Research Experience"
   - Built **Sequential** and **Combined Planners** to combat **dynamic obstacles** and generate task-based **trajectories**
   - Configured the **NVISII renderer** for high-quality **ray-tracing** based camera observations for **robot perception**
   - Explored **multi-agent RL** and **Vision-Language-Action (VLA) policies** for high-level, vision-based planning strategies
-- **Assistive Robotics and Manipulation Lab (ARM Lab)** ([Poster](https://drive.google.com/file/d/1aD8T8VQLkt9AARF4bfgITtCRxpG3HfYB/view?usp=sharing)) (Sep 2023 - Dec 2024)
+- **Assistive Robotics and Manipulation Lab (ARM Lab)** (Sep 2023 - Dec 2024)
   - Student Researcher, Supervisor: Prof. Monroe Kennedy (Stanford, CA)
   - **Outstanding Poster Presentation**
   - Designed a **vision model with event cameras** for **volume estimation of fluids** in containers
   - Designed and constructed a **synchronized RGB + Event camera rig** to capture equivalent views
   - Extended the capabilities of **SAM2 video segmentation** using **knowledge-distillation** and event-based data
+  - <iframe src="assets/pdfs/poster.pdf" width="100%" height="600px"></iframe>
 
 <hr>
 
