@@ -13,10 +13,11 @@ Coursework includes Reinforcement Learning, Computer Vision, Convex Optimziation
 
 # Travel Experiences
 My ambitious goal is to visit every country in the world. Here's a digital map of my current progress:
-
+[Travel Map](https://www.mytravelmap.xyz/u/gg117713561128268610289)
 <!-- [Describe your travel experiences, the countries visited, and the cultural insights gained.] -->
 
 # Music
 
 I used to be a part of Chai Town. Here's a link to our music:
+[YouTube](https://www.youtube.com/@ChaiTown)
 <!-- [Embed a link to your music or a description of your musical journey.] -->
