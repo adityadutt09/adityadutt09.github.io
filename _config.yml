@@ -25,7 +25,7 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:asdutt2@stanford.edu"}
   - {title: Github, icon: github, url: "github.com/adityadutt09"}
-  - {title: LinkedIn, icon: rss, url: "https://www.linkedin.com/in/adityadutt09"}
+  - {title: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/adityadutt09"}
 
 comments:
 #  disqus_shortname: ""    # see https://disqus.com/
