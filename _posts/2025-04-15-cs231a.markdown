@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "CS 231A: Computer Vision"
+date:   2025-04-15 12:00:00 +00:00
+categories: teaching
+venue: "Stanford University"
+website: https://web.stanford.edu/class/cs231a/
+---
+Description of the course you taught or assisted with. Include details about topics covered, your role, and any notable outcomes.

@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "CS237B: Principles of Robot Autonomy II"
+date:   2025-01-15 12:00:00 +00:00
+categories: teaching
+venue: "Stanford University"
+---
+Description of the course you taught or assisted with. Include details about topics covered, your role, and any notable outcomes.
