@@ -34,7 +34,7 @@
               <h1>
                 {{ site.name }}
               </h1>
-              <p>I am an AI Research Engineer at Maven Robotics. I recently graduated with my Masters degree from Stanford University. At Stanford, I worked on various research projects on Vision, Robot Maniplaiton and Reinforcement Learning. Before that, I did my undergrad at UIUC in Mechanical Engineering with minors in CS and Physics.
+              <p>I am an AI Research Engineer at Maven Robotics. I recently graduated with my Masters degree from Stanford University where I did research on Computer Vision, Robot Manipulation and Reinforcement Learning. Before that, I did my undergrad at UIUC in Mechanical Engineering with minors in CS and Physics.
               </p>
               <p>
                 Outside of Robotics, I like to sing, travel and play volleyball.
@@ -126,10 +126,7 @@
           {% for cat in post.categories %}
           {% if cat == 'teaching' %}
           <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
+            <td style="padding:2.5%;width:100%;vertical-align:middle">
               <h3>{{post.title}}</h3>
               <br>
               <em>{{post.venue}}</em>
@@ -194,6 +191,46 @@
               {% endif %}
               {% if post.video %}
               <a href="{{post.video}}">video</a> /
+              {% endif %}
+              <p></p>
+              {{ post.excerpt }}
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </table>
+        <br>
+        <br>
+        <br>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr>
+            <td style="padding:2.5%;width:100%;vertical-align:middle">
+              <h2>Awards & Honors</h2>
+              <p>Recognition and achievements.
+              </p>
+            </td>
+          </tr>
+        </table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+
+          {% for post in site.posts %}
+          {% for cat in post.categories %}
+          {% if cat == 'awards' %}
+          <tr>
+            <td style="padding:2.5%;width:100%;vertical-align:middle">
+              <h3>{{post.title}}</h3>
+              <br>
+              <em>{{post.venue}}</em>
+              <br>
+              {{ post.date | date: "%Y" }}
+
+              <br>
+              {% if post.website %}
+              <a href="{{post.website}}">website</a> /
+              {% endif %}
+              {% if post.paper %}
+              <a href="{{post.paper}}">details</a> /
               {% endif %}
               <p></p>
               {{ post.excerpt }}
