@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "AI Engineer"
+date:   2024-01-03 12:00:00 +00:00
+image: /images/maven_logo.png
+categories: work_experience
+venue: "Maven Robotics"
+---
+I do research on Robot Policy Learning using Sim2Real techniques for real-world manipulation tasks.

@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "Robotics Software Engineer"
+date:   2024-01-03 12:00:00 +00:00
+image: /images/ambi_logo.png
+categories: work_experience
+venue: "Ambi Robotics"
+---
+I worked on 6D Pose Reconstruction algorithms, OCR Detection Transformer Models and Region of Interest Segmentation Models
