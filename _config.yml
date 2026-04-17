@@ -76,6 +76,18 @@ kramdown:
 sass:
   style: :compressed # You might prefer to minify using :compressed
 
+collections:
+  blogs:
+    output: true
+    permalink: /blogs/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: blogs
+    values:
+      layout: blog
+
 # Use the following plug-ins
 plugins:
       - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem

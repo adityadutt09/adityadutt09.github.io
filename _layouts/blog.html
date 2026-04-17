@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}</title>
+  <meta name="author" content="{{ site.name }}">
+  {% if page.excerpt %}
+  <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}">
+  {% endif %}
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="blog-theme">
+  <div class="blog-shell">
+    <nav class="blog-top-nav">
+      <a href="{{ site.baseurl }}/">Home</a>
+      <span>/</span>
+      <a href="{{ site.baseurl }}/blogs/">Blogs</a>
+      {% if page.series %}
+      <span>/</span>
+      <span class="blog-muted">{{ page.series }}</span>
+      {% endif %}
+    </nav>
+
+    <header class="blog-header">
+      <h1>{{ page.title }}</h1>
+      {% if page.subtitle %}
+      <p class="blog-subtitle">{{ page.subtitle }}</p>
+      {% endif %}
+      <div class="blog-meta">
+        <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+        {% if page.author %}
+        <span>{{ page.author }}</span>
+        {% endif %}
+        {% if page.reading_time %}
+        <span>{{ page.reading_time }}</span>
+        {% endif %}
+      </div>
+      {% if page.tags and page.tags.size > 0 %}
+      <div class="blog-tags">
+        {% for tag in page.tags %}
+        <span class="blog-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </header>
+
+    {% if page.toc and page.toc.size > 0 %}
+    <aside class="blog-toc">
+      <p>Contents</p>
+      <ol>
+        {% for item in page.toc %}
+        <li><a href="#{{ item.id }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ol>
+    </aside>
+    {% endif %}
+
+    <main class="blog-content">
+      {{ content }}
+    </main>
+
+    {% if page.series and page.part %}
+      {% assign series_docs = site.blogs | where: "series", page.series | sort: "part" %}
+      {% assign prev_part = page.part | minus: 1 %}
+      {% assign next_part = page.part | plus: 1 %}
+      {% assign prev_doc = series_docs | where: "part", prev_part | first %}
+      {% assign next_doc = series_docs | where: "part", next_part | first %}
+      <section class="blog-pagination">
+        <div>
+          {% if prev_doc %}
+          <a href="{{ site.baseurl }}{{ prev_doc.url }}">← Part {{ prev_doc.part }}: {{ prev_doc.title }}</a>
+          {% else %}
+          <span class="blog-muted">Start of series</span>
+          {% endif %}
+        </div>
+        <div>
+          {% if next_doc %}
+          <a href="{{ site.baseurl }}{{ next_doc.url }}">Part {{ next_doc.part }}: {{ next_doc.title }} →</a>
+          {% else %}
+          <span class="blog-muted">End of series</span>
+          {% endif %}
+        </div>
+      </section>
+    {% endif %}
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (!window.renderMathInElement) return;
+      window.renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false }
+        ],
+        throwOnError: false
+      });
+    });
+  </script>
+</body>
+</html>
