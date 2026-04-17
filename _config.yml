@@ -97,6 +97,9 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - .bundle/
+  - vendor/
+  - vendor/bundle/
   - LICENSE
   - README.md
   - CNAME
