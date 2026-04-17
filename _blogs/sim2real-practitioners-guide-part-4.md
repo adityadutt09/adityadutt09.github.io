@@ -1,9 +1,11 @@
 ---
-title: "Sim2Real Practitioner's Guide - Part 4: SysID and Sim2Real Deployment"
+title: "Part 4: SysID and Sim2Real Deployment"
 date: 2026-04-20 12:00:00 +00:00
 author: "Aditya Dutt"
 series: "Sim2Real Practitioner's Guide"
 part: 4
+chapter_title: "SysID and Sim2Real Deployment"
+draft: true
 summary: "Calibrate simulation to hardware and deploy policies with stable execution and validation loops."
 subtitle: "This chapter covers system identification, runtime controls, and deployment checklists for reliable transfer."
 reading_time: "12 min read"

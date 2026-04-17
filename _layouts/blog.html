@@ -61,6 +61,23 @@
     </aside>
     {% endif %}
 
+    {% if page.series and page.part %}
+    {% assign series_docs = site.blogs | where: "series", page.series | sort: "part" %}
+    {% if jekyll.environment == "production" %}
+    {% assign series_docs = series_docs | where_exp: "doc", "doc.draft != true" %}
+    {% endif %}
+    <aside class="blog-series-nav">
+      <p>Guide chapters</p>
+      <ol>
+        {% for doc in series_docs %}
+        <li{% if doc.url == page.url %} class="is-current"{% endif %}>
+          <a href="{{ site.baseurl }}{{ doc.url }}">Part {{ doc.part }}: {{ doc.chapter_title | default: doc.title }}</a>
+        </li>
+        {% endfor %}
+      </ol>
+    </aside>
+    {% endif %}
+
     <main class="blog-content">
       {{ content }}
     </main>
@@ -74,14 +91,14 @@
       <section class="blog-pagination">
         <div>
           {% if prev_doc %}
-          <a href="{{ site.baseurl }}{{ prev_doc.url }}">← Part {{ prev_doc.part }}: {{ prev_doc.title }}</a>
+          <a href="{{ site.baseurl }}{{ prev_doc.url }}">← Part {{ prev_doc.part }}: {{ prev_doc.chapter_title | default: prev_doc.title }}</a>
           {% else %}
           <span class="blog-muted">Start of series</span>
           {% endif %}
         </div>
         <div>
           {% if next_doc %}
-          <a href="{{ site.baseurl }}{{ next_doc.url }}">Part {{ next_doc.part }}: {{ next_doc.title }} →</a>
+          <a href="{{ site.baseurl }}{{ next_doc.url }}">Part {{ next_doc.part }}: {{ next_doc.chapter_title | default: next_doc.title }} →</a>
           {% else %}
           <span class="blog-muted">End of series</span>
           {% endif %}

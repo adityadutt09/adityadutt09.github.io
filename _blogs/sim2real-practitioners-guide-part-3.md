@@ -1,9 +1,11 @@
 ---
-title: "Sim2Real Practitioner's Guide - Part 3: Student Distillation and Finetuning"
+title: "Part 3: Student Distillation and Finetuning"
 date: 2026-04-19 12:00:00 +00:00
 author: "Aditya Dutt"
 series: "Sim2Real Practitioner's Guide"
 part: 3
+chapter_title: "Student Distillation and Finetuning"
+draft: true
 summary: "Distill privileged teacher behavior into an RGB student and improve robustness through fine-tuning."
 subtitle: "This chapter covers DAgger/BC setup, visual encoder choices, and post-distillation reinforcement learning."
 reading_time: "13 min read"

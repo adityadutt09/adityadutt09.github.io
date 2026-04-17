@@ -28,14 +28,45 @@ permalink: /blogs/
 
     <section class="blog-list">
       {% assign entries = site.blogs | sort: "date" | reverse %}
+      {% if jekyll.environment == "production" %}
+      {% assign entries = entries | where_exp: "entry", "entry.draft != true" %}
+      {% endif %}
+
+      {% assign rendered_count = 0 %}
+
       {% for entry in entries %}
+      {% if entry.series and entry.part == 1 %}
+      <article class="blog-list-item">
+        <h2><a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.series }}</a></h2>
+        <p class="blog-list-meta">
+          <span>{{ entry.date | date: "%B %-d, %Y" }}</span>
+          <span>Guide with sub-pages</span>
+        </p>
+        {% if entry.summary %}
+        <p>{{ entry.summary }}</p>
+        {% else %}
+        <p>{{ entry.excerpt | strip_html | truncate: 220 }}</p>
+        {% endif %}
+        {% assign chapters = site.blogs | where: "series", entry.series | sort: "part" %}
+        {% if jekyll.environment == "production" %}
+        {% assign chapters = chapters | where_exp: "chapter", "chapter.draft != true" %}
+        {% endif %}
+        <ol class="blog-series-links">
+          {% for chapter in chapters %}
+          <li><a href="{{ site.baseurl }}{{ chapter.url }}">Part {{ chapter.part }}: {{ chapter.chapter_title | default: chapter.title }}</a></li>
+          {% endfor %}
+        </ol>
+      </article>
+      {% assign rendered_count = rendered_count | plus: 1 %}
+      {% endif %}
+      {% endfor %}
+
+      {% for entry in entries %}
+      {% unless entry.series %}
       <article class="blog-list-item">
         <h2><a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a></h2>
         <p class="blog-list-meta">
           <span>{{ entry.date | date: "%B %-d, %Y" }}</span>
-          {% if entry.series and entry.part %}
-          <span>Series: {{ entry.series }} (Part {{ entry.part }})</span>
-          {% endif %}
         </p>
         {% if entry.summary %}
         <p>{{ entry.summary }}</p>
@@ -43,8 +74,11 @@ permalink: /blogs/
         <p>{{ entry.excerpt | strip_html | truncate: 220 }}</p>
         {% endif %}
       </article>
+      {% assign rendered_count = rendered_count | plus: 1 %}
+      {% endunless %}
       {% endfor %}
-      {% if entries.size == 0 %}
+
+      {% if rendered_count == 0 %}
       <p class="blog-muted">No blog posts yet. Add a file in `_blogs/` to publish your first post.</p>
       {% endif %}
     </section>

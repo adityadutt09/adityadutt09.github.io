@@ -1,9 +1,11 @@
 ---
-title: "Sim2Real Practitioner's Guide - Part 2: Teacher Training"
+title: "Part 2: Teacher Training"
 date: 2026-04-18 12:00:00 +00:00
 author: "Aditya Dutt"
 series: "Sim2Real Practitioner's Guide"
 part: 2
+chapter_title: "Teacher Training"
+draft: true
 summary: "Train a robust privileged teacher policy with the right algorithm, action space, and randomization stack."
 subtitle: "This chapter covers teacher objective design, early RL algorithm choice, and practical training heuristics."
 reading_time: "14 min read"

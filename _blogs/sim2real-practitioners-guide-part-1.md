@@ -1,9 +1,11 @@
 ---
-title: "Sim2Real Practitioner's Guide - Part 1: Overview"
+title: "Part 1: Overview"
 date: 2026-04-17 12:00:00 +00:00
 author: "Aditya Dutt"
 series: "Sim2Real Practitioner's Guide"
 part: 1
+chapter_title: "Overview"
+draft: true
 summary: "A multi-page roadmap for deploying robust sim2real manipulation policies end to end."
 subtitle: "This chapter frames the full pipeline and links to each implementation-focused sub-page."
 reading_time: "8 min read"
