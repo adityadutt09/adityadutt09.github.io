@@ -6,5 +6,5 @@ categories: awards
 venue: "Stanford"
 website: https://ctl.stanford.edu/grad-teaching/ta-award/winners#en25
 ---
-Description of the award and why you received it. Include context about the significance of the recognition.
+Annual award recieved by around 20 students in the Engineering Department, through faculty and student nominations, for their distinguished services and dedication as Teaching Assistants for courses.
 

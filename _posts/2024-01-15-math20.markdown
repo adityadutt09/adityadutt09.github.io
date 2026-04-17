@@ -5,4 +5,4 @@ date:   2024-01-15 12:00:00 +00:00
 categories: teaching
 venue: "Stanford University"
 ---
-Description of the course you taught or assisted with. Include details about topics covered, your role, and any notable outcomes.
+Undergraduate course on introductory calculus covering Fundamental theorem of calculs, riemann sums, integration by parts, areas, volumes and parametric curves. 

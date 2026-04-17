@@ -4,5 +4,6 @@ title:  "CS237A: Principles of Robot Autonomy I"
 date:   2024-09-15 12:00:00 +00:00
 categories: teaching
 venue: "Stanford University"
+website: https://stanfordasl.github.io/PoRA-I/aa274a_aut2425/
 ---
-Description of the course you taught or assisted with. Include details about topics covered, your role, and any notable outcomes.
+This course covers the basic principles for endowing mobile autonomous robots with planning, perception, and decision-making capabilities.

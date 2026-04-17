@@ -5,4 +5,4 @@ date:   2024-04-15 12:00:00 +00:00
 categories: teaching
 venue: "Stanford University"
 ---
-Description of the course you taught or assisted with. Include details about topics covered, your role, and any notable outcomes.
+Advanced course on modeling and analysis of dynamical systems. Covers reference frames, kinematics, D'Alembert's principle, Lagrange and Hamiltonian Equations of motion. 
