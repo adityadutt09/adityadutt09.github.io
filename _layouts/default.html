@@ -25,10 +25,10 @@
 </head>
 
 <body>
-  {% assign research_posts = site.posts | where_exp: "post", "post.categories contains 'research'" | sort: "date" | reverse %}
-  {% assign teaching_posts = site.posts | where_exp: "post", "post.categories contains 'teaching'" | sort: "date" | reverse %}
-  {% assign work_posts = site.posts | where_exp: "post", "post.categories contains 'work_experience'" | sort: "date" | reverse %}
-  {% assign award_posts = site.posts | where_exp: "post", "post.categories contains 'awards'" | sort: "date" | reverse %}
+  {% assign research_posts = site.posts | where_exp: "post", "post.categories contains 'research' and post.hide_from_home != true" | sort: "date" | reverse %}
+  {% assign teaching_posts = site.posts | where_exp: "post", "post.categories contains 'teaching' and post.hide_from_home != true" | sort: "date" | reverse %}
+  {% assign work_posts = site.posts | where_exp: "post", "post.categories contains 'work_experience' and post.hide_from_home != true" | sort: "date" | reverse %}
+  {% assign award_posts = site.posts | where_exp: "post", "post.categories contains 'awards' and post.hide_from_home != true" | sort: "date" | reverse %}
 
   <div class="home-page">
     <main class="home-shell">
@@ -128,11 +128,24 @@
           {% for post in work_posts %}
           <article class="content-card card-with-media">
             {% if post.image %}
-            <img src="{{ post.image }}" alt="{{ post.venue }} logo" class="logo-media">
+            <div class="logo-media-wrap">
+              <img src="{{ post.image }}" alt="{{ post.venue }} logo" class="logo-media">
+            </div>
             {% endif %}
             <div>
               <h3>{{ post.title }}</h3>
-              <p class="meta-line"><em>{{ post.venue }}</em> · {{ post.date | date: "%Y" }}</p>
+              <p class="meta-line">
+                <em>{{ post.venue }}</em> ·
+                {% assign display_start = post.start_date | default: post.date %}
+                {% assign start_label = display_start | date: "%b %Y" %}
+                {% assign end_label = nil %}
+                {% if post.end_date %}
+                  {% assign end_label = post.end_date | date: "%b %Y" %}
+                {% elsif post.current == true %}
+                  {% assign end_label = "Present" %}
+                {% endif %}
+                {{ start_label }}{% if end_label %} - {{ end_label }}{% endif %}
+              </p>
               <p>{{ post.excerpt | strip_html }}</p>
               <div class="chip-links">
                 {% if post.website %}<a href="{{ post.website }}">website</a>{% endif %}

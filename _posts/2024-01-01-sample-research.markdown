@@ -9,5 +9,6 @@ venue: "Conference/Journal Name"
 arxiv: https://arxiv.org/abs/your-paper-id
 code: https://github.com/yourusername/your-project
 website: https://yourproject-website.com
+hide_from_home: true
 ---
 Brief description of your research project. This is where you would describe the key contributions and findings of your research work.

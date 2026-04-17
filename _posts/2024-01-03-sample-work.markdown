@@ -5,5 +5,6 @@ date:   2024-01-03 12:00:00 +00:00
 image: /images/404.jpg
 categories: work_experience
 venue: "Company Name"
+hide_from_home: true
 ---
 Description of your role and responsibilities. Highlight key projects, achievements, and technologies you worked with.

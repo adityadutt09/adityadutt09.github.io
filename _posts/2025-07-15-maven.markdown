@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "Research Engineer - Robot Learning"
-date:   2024-01-03 12:00:00 +00:00
+date:   2025-07-015 12:00:00 +00:00
 image: /images/maven_logo.png
 categories: work_experience
 venue: "Maven Robotics"
+current: true
 ---
 I do research on Robot Learning spanning Sim2Real techniques and RL-finetuning for real-world dexterous manipulation tasks.
