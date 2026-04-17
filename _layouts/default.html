@@ -25,10 +25,10 @@
 </head>
 
 <body>
-  {% assign research_posts = site.posts | where_exp: "post", "post.categories contains 'research' and post.hide_from_home != true" | sort: "date" | reverse %}
-  {% assign teaching_posts = site.posts | where_exp: "post", "post.categories contains 'teaching' and post.hide_from_home != true" | sort: "date" | reverse %}
-  {% assign work_posts = site.posts | where_exp: "post", "post.categories contains 'work_experience' and post.hide_from_home != true" | sort: "date" | reverse %}
-  {% assign award_posts = site.posts | where_exp: "post", "post.categories contains 'awards' and post.hide_from_home != true" | sort: "date" | reverse %}
+  {% assign research_posts = site.posts | where_exp: "post", "post.categories contains 'research'" | sort: "date" | reverse %}
+  {% assign teaching_posts = site.posts | where_exp: "post", "post.categories contains 'teaching'" | sort: "date" | reverse %}
+  {% assign work_posts = site.posts | where_exp: "post", "post.categories contains 'work_experience'" | sort: "date" | reverse %}
+  {% assign award_posts = site.posts | where_exp: "post", "post.categories contains 'awards'" | sort: "date" | reverse %}
 
   <div class="home-page">
     <main class="home-shell">
@@ -61,6 +61,7 @@
         </div>
         <div class="stack-list">
           {% for post in research_posts %}
+          {% unless post.hide_from_home %}
           <article class="content-card card-with-media">
             {% if post.image %}
             <img src="{{ post.image }}" alt="{{ post.title }} visual" class="card-media">
@@ -85,6 +86,7 @@
               </div>
             </div>
           </article>
+          {% endunless %}
           {% endfor %}
         </div>
       </section>
@@ -96,6 +98,7 @@
         </div>
         <div class="course-grid">
           {% for post in teaching_posts %}
+          {% unless post.hide_from_home %}
           <article class="course-card">
             {% if post.image %}
             <img src="{{ post.image }}" alt="{{ post.title }} image" class="course-image">
@@ -115,6 +118,7 @@
               </details>
             </div>
           </article>
+          {% endunless %}
           {% endfor %}
         </div>
       </section>
@@ -126,6 +130,7 @@
         </div>
         <div class="stack-list">
           {% for post in work_posts %}
+          {% unless post.hide_from_home %}
           <article class="content-card card-with-media">
             {% if post.image %}
             <div class="logo-media-wrap">
@@ -154,6 +159,7 @@
               </div>
             </div>
           </article>
+          {% endunless %}
           {% endfor %}
         </div>
       </section>
@@ -165,11 +171,13 @@
         </div>
         <div class="award-list">
           {% for post in award_posts %}
+          {% unless post.hide_from_home %}
           <article class="award-item">
             <h3>{{ post.title }}</h3>
             <p class="meta-line"><em>{{ post.venue }}</em> · {{ post.date | date: "%Y" }}</p>
             <p>{{ post.excerpt | strip_html }}</p>
           </article>
+          {% endunless %}
           {% endfor %}
         </div>
       </section>
