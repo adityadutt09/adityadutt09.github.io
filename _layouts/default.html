@@ -25,237 +25,147 @@
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:60%;vertical-align:middle">
-              <h1>
-                {{ site.name }}
-              </h1>
-              <p>I am an AI Research Engineer at Maven Robotics. I recently graduated with my Masters degree from Stanford University where I did research on Computer Vision, Robot Manipulation and Reinforcement Learning. Before that, I did my undergrad at UIUC in Mechanical Engineering with minors in CS and Physics.
+  {% assign research_posts = site.posts | where_exp: "post", "post.categories contains 'research'" | sort: "date" | reverse %}
+  {% assign teaching_posts = site.posts | where_exp: "post", "post.categories contains 'teaching'" | sort: "date" | reverse %}
+  {% assign work_posts = site.posts | where_exp: "post", "post.categories contains 'work_experience'" | sort: "date" | reverse %}
+  {% assign award_posts = site.posts | where_exp: "post", "post.categories contains 'awards'" | sort: "date" | reverse %}
+
+  <div class="home-page">
+    <main class="home-shell">
+      <section class="hero-card">
+        <div>
+          <h1 class="home-title">{{ site.name }}</h1>
+          <p>
+            I am an AI Research Engineer at Maven Robotics. I recently graduated with my Masters degree from Stanford University where I did research on Computer Vision, Robot Manipulation and Reinforcement Learning. Before that, I did my undergrad at UIUC in Mechanical Engineering with minors in CS and Physics.
+          </p>
+          <p>
+            Outside of Robotics, I like to sing, travel and play volleyball.
+          </p>
+          <div class="hero-links">
+            <a target="_blank" href="mailto:{{ site.footer-links.email }}">Email</a>
+            <a href="https://github.com/{{ site.footer-links.github }}">GitHub</a>
+            <a href="https://www.linkedin.com/in/{{ site.footer-links.linkedin }}">LinkedIn</a>
+            <a href="{{ site.baseurl }}/blogs/">Blogs</a>
+            <a href="/pdfs/cv.pdf">CV</a>
+          </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" alt="Profile photo" src="{{ site.avatar }}">
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-header">
+          <h2>Research</h2>
+          <p>I am interested in robot learning algorithms focused on improving the performance and reliability of bimanual arms on real-world manipulation tasks.</p>
+        </div>
+        <div class="stack-list">
+          {% for post in research_posts %}
+          <article class="content-card card-with-media">
+            {% if post.image %}
+            <img src="{{ post.image }}" alt="{{ post.title }} visual" class="card-media">
+            {% endif %}
+            <div>
+              <h3>{{ post.title }}</h3>
+              <p class="meta-line">
+                {% if post.venue %}<em>{{ post.venue }}</em>{% endif %}{% if post.venue %} · {% endif %}{{ post.date | date: "%Y" }}
               </p>
-              <p>
-                Outside of Robotics, I like to sing, travel and play volleyball.
-              </p>
-              <p style="text-align:center">
-                <a target="_blank" href="mailto:{{ site.footer-links.email }}"> Email</a> &nbsp;/&nbsp;
-                <a href="https://github.com/{{ site.footer-links.github }}">GitHub</a> &nbsp;/&nbsp;
-                <!-- <a href="https://scholar.google.com/citations?user={{ site.footer-links.googlescholar }}">Google Scholar</a> &nbsp;/&nbsp; -->
-                <a href="https://www.linkedin.com/in/{{ site.footer-links.linkedin }}"> LinkedIn </a> &nbsp;/&nbsp;
-                <a href="{{ site.baseurl }}/blogs/">Blogs</a> &nbsp;/&nbsp;
-                <a href="/pdfs/cv.pdf">CV</a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <img style="width:100%;max-width:100%" alt="profile photo" src="{{ site.avatar }}">
-            </td>
-          </tr>
-        </table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Research</h2>
-              <p>
-                I am interested in robot learning algorithms focused on improving the performance and reliability of bimanual arms on real-world manipulation tasks. I am currently exploring the potential of Sim2Real pipelines for this effort.
-              </p>
-            </td>
-          </tr>
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'research' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              {{post.authors}}
-
-              <br>
-              <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
-              <br>
-              {% if post.arxiv %}
-              <a href="{{post.arxiv}}">arxiv</a> /
+              {% if post.authors %}
+              <p class="authors-line">{{ post.authors }}</p>
               {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.youtube %}
-              <a href="{{post.youtube}}">youtube</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
+              <p>{{ post.excerpt | strip_html }}</p>
+              <div class="chip-links">
+                {% if post.arxiv %}<a href="{{ post.arxiv }}">arxiv</a>{% endif %}
+                {% if post.video %}<a href="{{ post.video }}">video</a>{% endif %}
+                {% if post.code %}<a href="{{ post.code }}">code</a>{% endif %}
+                {% if post.poster %}<a href="{{ post.poster }}">poster</a>{% endif %}
+                {% if post.slides %}<a href="{{ post.slides }}">slides</a>{% endif %}
+                {% if post.website %}<a href="{{ post.website }}">website</a>{% endif %}
+                {% if post.youtube %}<a href="{{ post.youtube }}">youtube</a>{% endif %}
+              </div>
+            </div>
+          </article>
           {% endfor %}
-          {% endfor %}
-        </table>
-        <br>
-        <br>
-        <br>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Teaching</h2>
-              <p>Courses and teaching experience.
-              </p>
-            </td>
-          </tr>
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        </div>
+      </section>
 
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'teaching' %}
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.venue}}</em>
-              <br>
-              {{ post.date | date: "%Y" }}
-
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">materials</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
+      <section class="section-block">
+        <div class="section-header">
+          <h2>Teaching</h2>
+          <p>Course work and teaching experience presented in a compact card layout.</p>
+        </div>
+        <div class="course-grid">
+          {% for post in teaching_posts %}
+          <article class="course-card">
+            {% if post.image %}
+            <img src="{{ post.image }}" alt="{{ post.title }} image" class="course-image">
+            {% endif %}
+            <div class="course-body">
+              <h3>{{ post.title }}</h3>
+              <p class="meta-line"><em>{{ post.venue }}</em> · {{ post.date | date: "%Y" }}</p>
+              <details>
+                <summary>View details</summary>
+                <p>{{ post.excerpt | strip_html }}</p>
+                <div class="chip-links">
+                  {% if post.website %}<a href="{{ post.website }}">website</a>{% endif %}
+                  {% if post.paper %}<a href="{{ post.paper }}">materials</a>{% endif %}
+                  {% if post.video %}<a href="{{ post.video }}">video</a>{% endif %}
+                  {% if post.slides %}<a href="{{ post.slides }}">slides</a>{% endif %}
+                </div>
+              </details>
+            </div>
+          </article>
           {% endfor %}
-          {% endfor %}
-        </table>
-        <br>
-        <br>
-        <br>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Work Experience</h2>
-              <p>Professional experience and positions.
-              </p>
-            </td>
-          </tr>
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        </div>
+      </section>
 
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'work_experience' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.venue}}</em>
-              <br>
-              {{ post.date | date: "%Y" }}
-
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">details</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
+      <section class="section-block">
+        <div class="section-header">
+          <h2>Work Experience</h2>
+          <p>Professional experience and positions.</p>
+        </div>
+        <div class="stack-list">
+          {% for post in work_posts %}
+          <article class="content-card card-with-media">
+            {% if post.image %}
+            <img src="{{ post.image }}" alt="{{ post.venue }} logo" class="logo-media">
+            {% endif %}
+            <div>
+              <h3>{{ post.title }}</h3>
+              <p class="meta-line"><em>{{ post.venue }}</em> · {{ post.date | date: "%Y" }}</p>
+              <p>{{ post.excerpt | strip_html }}</p>
+              <div class="chip-links">
+                {% if post.website %}<a href="{{ post.website }}">website</a>{% endif %}
+                {% if post.paper %}<a href="{{ post.paper }}">details</a>{% endif %}
+                {% if post.video %}<a href="{{ post.video }}">video</a>{% endif %}
+              </div>
+            </div>
+          </article>
           {% endfor %}
-          {% endfor %}
-        </table>
-        <br>
-        <br>
-        <br>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Awards & Honors</h2>
-              <p>Recognition and achievements.
-              </p>
-            </td>
-          </tr>
-        </table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        </div>
+      </section>
 
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'awards' %}
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.venue}}</em>
-              <br>
-              {{ post.date | date: "%Y" }}
-
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">details</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
+      <section class="section-block">
+        <div class="section-header">
+          <h2>Awards & Honors</h2>
+          <p>Recognition and achievements.</p>
+        </div>
+        <div class="award-list">
+          {% for post in award_posts %}
+          <article class="award-item">
+            <h3>{{ post.title }}</h3>
+            <p class="meta-line"><em>{{ post.venue }}</em> · {{ post.date | date: "%Y" }}</p>
+            <p>{{ post.excerpt | strip_html }}</p>
+          </article>
           {% endfor %}
-          {% endfor %}
-        </table>
+        </div>
+      </section>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:center;font-size:small;">
-                Design and source code from <a style="font-size:small;" href="https://jonbarron.info">Jon Barron's website</a>
-              </p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+      <footer class="home-footer">
+        Design and source code adapted from <a href="https://jonbarron.info">Jon Barron's website</a>
+      </footer>
+    </main>
+  </div>
 </body>
 
 </html>

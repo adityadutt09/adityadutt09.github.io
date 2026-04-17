@@ -105,6 +105,251 @@ span.highlight {
 //@import "svg-icons";
 
 /*****************/
+/* HOME REDESIGN */
+/*****************/
+
+.home-page {
+  background: #f5f7fb;
+  min-height: 100vh;
+  padding: 2rem 1rem 3rem;
+}
+
+.home-page .home-shell {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.home-page p,
+.home-page a,
+.home-page li,
+.home-page td,
+.home-page th,
+.home-page tr {
+  font-family: "Lato", Verdana, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.home-page .hero-card {
+  background: #fff;
+  border: 1px solid #e1e6f0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 1.5rem;
+  align-items: center;
+  box-shadow: 0 6px 20px rgba(25, 39, 70, 0.05);
+}
+
+.home-page .home-title {
+  margin: 0 0 0.7rem;
+  text-align: left;
+  font-size: clamp(1.9rem, 4vw, 2.4rem);
+}
+
+.home-page .hero-links {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.home-page .hero-links a {
+  border: 1px solid #d2dbeb;
+  background: #f7faff;
+  border-radius: 999px;
+  padding: 0.24rem 0.72rem;
+  color: #174ea6;
+  font-size: 0.9rem;
+}
+
+.home-page .hero-photo-wrap {
+  justify-self: center;
+  width: 190px;
+  height: 190px;
+}
+
+.home-page .hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid #dbe4f4;
+}
+
+.home-page .section-block {
+  margin-top: 1.4rem;
+  background: #fff;
+  border: 1px solid #e1e6f0;
+  border-radius: 16px;
+  padding: 1.35rem;
+  box-shadow: 0 6px 20px rgba(25, 39, 70, 0.04);
+}
+
+.home-page .section-header h2 {
+  margin: 0;
+  display: block;
+  font-size: 1.45rem;
+}
+
+.home-page .section-header p {
+  margin: 0.45rem 0 0;
+  color: #4f5f7b;
+}
+
+.home-page .stack-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.home-page .content-card {
+  border: 1px solid #e5e9f1;
+  border-radius: 12px;
+  padding: 0.95rem;
+  background: #fcfdff;
+}
+
+.home-page .content-card h3,
+.home-page .course-card h3,
+.home-page .award-item h3 {
+  margin: 0;
+  display: block;
+  font-size: 1.08rem;
+}
+
+.home-page .card-with-media {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.95rem;
+  align-items: start;
+}
+
+.home-page .card-media {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e4eaf8;
+}
+
+.home-page .logo-media {
+  width: 120px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid #e4eaf8;
+  background: #fff;
+  padding: 0.5rem;
+}
+
+.home-page .meta-line {
+  margin: 0.25rem 0 0.55rem;
+  color: #5c6983;
+  font-size: 0.9rem;
+}
+
+.home-page .authors-line {
+  margin: 0 0 0.5rem;
+  font-size: 0.92rem;
+}
+
+.home-page .chip-links {
+  margin-top: 0.45rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.home-page .chip-links a {
+  background: #edf3ff;
+  color: #2056ae;
+  border-radius: 999px;
+  border: 1px solid #dce7fb;
+  padding: 0.16rem 0.55rem;
+  font-size: 0.82rem;
+}
+
+.home-page .course-grid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.home-page .course-card {
+  border: 1px solid #e5e9f1;
+  border-radius: 12px;
+  background: #fcfdff;
+  overflow: hidden;
+}
+
+.home-page .course-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid #e4eaf8;
+}
+
+.home-page .course-body {
+  padding: 0.85rem;
+}
+
+.home-page details summary {
+  cursor: pointer;
+  color: #2056ae;
+  font-weight: 700;
+}
+
+.home-page details p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.home-page .award-list {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.home-page .award-item {
+  border: 1px solid #e5e9f1;
+  border-radius: 12px;
+  padding: 0.9rem;
+  background: #fcfdff;
+}
+
+.home-page .home-footer {
+  margin-top: 1.1rem;
+  text-align: center;
+  color: #5f6f8c;
+  font-size: 0.86rem;
+}
+
+@media (max-width: 760px) {
+  .home-page .hero-card {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .hero-photo-wrap {
+    width: 150px;
+    height: 150px;
+  }
+
+  .home-page .card-with-media {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .card-media,
+  .home-page .logo-media {
+    width: 100%;
+    height: 160px;
+  }
+}
+
+/*****************/
 /* BLOGS THEME   */
 /*****************/
 
