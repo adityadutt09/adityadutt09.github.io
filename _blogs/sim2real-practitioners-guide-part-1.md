@@ -65,6 +65,49 @@ Phase C: SysID and sim2real deployment
   <p><strong>How to use this guide.</strong> Read chapter-by-chapter if you are building a new pipeline, or jump directly to the chapter that matches your current bottleneck.</p>
 </div>
 
+<figure class="blog-figure">
+  <svg width="100%" viewBox="0 0 680 440" xmlns="http://www.w3.org/2000/svg">
+    <defs><marker id="pipeline-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <text x="340" y="22" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="14" font-weight="600" fill="#1c1c1a">End-to-end sim2real pipeline</text>
+    <rect x="55" y="38" width="570" height="36" rx="6" fill="#f3f1ea" stroke="#c8c5bb" stroke-width="0.5"/>
+    <text x="340" y="60" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" font-weight="500" fill="#6b6b66">Phase 0 · System identification — URDF, controller, camera [Part 4]</text>
+    <line x1="340" y1="74" x2="340" y2="92" stroke="#aaa" stroke-width="1" marker-end="url(#pipeline-arrow)"/>
+    <rect x="55" y="92" width="570" height="96" rx="10" fill="#eeedfe" stroke="#afa9ec" stroke-width="0.5"/>
+    <text x="340" y="114" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#3c3489">Phase 1 · Privileged RL teacher [Part 2]</text>
+    <rect x="75" y="124" width="145" height="48" rx="5" fill="#dddaf8" stroke="#afa9ec" stroke-width="0.5"/>
+    <text x="148" y="145" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="500" fill="#3c3489">Asymmetric AC</text>
+    <text x="148" y="161" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#534ab7">Noisy actor + GT critic</text>
+    <rect x="235" y="124" width="145" height="48" rx="5" fill="#d2f0e3" stroke="#5dcaa5" stroke-width="0.5"/>
+    <text x="308" y="145" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="500" fill="#085041">OmniReset</text>
+    <text x="308" y="161" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#0f6e56">Event-based resets</text>
+    <rect x="395" y="124" width="145" height="48" rx="5" fill="#faeeda" stroke="#fac775" stroke-width="0.5"/>
+    <text x="468" y="145" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="500" fill="#633806">Physics DR</text>
+    <text x="468" y="161" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#854f0b">ADR / manual ranges</text>
+    <line x1="340" y1="188" x2="340" y2="210" stroke="#aaa" stroke-width="1" marker-end="url(#pipeline-arrow)"/>
+    <text x="355" y="204" font-family="DM Sans,sans-serif" font-size="10" fill="#888">DAgger + BC</text>
+    <rect x="55" y="210" width="570" height="96" rx="10" fill="#faece7" stroke="#f0997b" stroke-width="0.5"/>
+    <text x="340" y="232" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#712b13">Phase 2 · Student distillation [Part 3]</text>
+    <rect x="75" y="242" width="115" height="48" rx="5" fill="#f5c4b3" stroke="#f0997b" stroke-width="0.5"/>
+    <text x="133" y="263" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="500" fill="#712b13">Encoder</text>
+    <text x="133" y="279" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#993c1d">ResNet / DINOv2</text>
+    <rect x="205" y="242" width="100" height="48" rx="5" fill="#f5c4b3" stroke="#f0997b" stroke-width="0.5"/>
+    <text x="255" y="263" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="500" fill="#712b13">LSTM</text>
+    <text x="255" y="279" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#993c1d">Temporal ctx</text>
+    <rect x="320" y="242" width="100" height="48" rx="5" fill="#f5c4b3" stroke="#f0997b" stroke-width="0.5"/>
+    <text x="370" y="263" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="500" fill="#712b13">Action head</text>
+    <text x="370" y="279" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#993c1d">Gaussian MLP</text>
+    <rect x="435" y="242" width="170" height="48" rx="5" fill="#faeeda" stroke="#fac775" stroke-width="0.5"/>
+    <text x="520" y="263" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="500" fill="#633806">Visual DR</text>
+    <text x="520" y="279" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#854f0b">Light · texture · camera</text>
+    <line x1="340" y1="306" x2="340" y2="328" stroke="#aaa" stroke-width="1" marker-end="url(#pipeline-arrow)"/>
+    <text x="355" y="322" font-family="DM Sans,sans-serif" font-size="10" fill="#888">Optional RL finetuning</text>
+    <rect x="120" y="328" width="440" height="44" rx="8" fill="#e6f1fb" stroke="#85b7eb" stroke-width="0.5"/>
+    <text x="340" y="348" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="13" font-weight="600" fill="#0c447c">Phase 3 · Zero-shot deployment [Part 4]</text>
+    <text x="340" y="364" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#185fa5">RGB + proprioception → velocity actions · binary gripper</text>
+  </svg>
+  <figcaption><strong>Pipeline overview.</strong> Four phases from teacher training to deployment across this guide.</figcaption>
+</figure>
+
 <div id="chapter-roadmap"></div>
 ## Chapter roadmap
 

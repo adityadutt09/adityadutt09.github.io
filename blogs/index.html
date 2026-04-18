@@ -36,11 +36,10 @@ permalink: /blogs/
 
       {% for entry in entries %}
       {% if entry.series and entry.part == 1 %}
-      <article class="blog-list-item">
+      <article class="blog-list-item blog-list-item--series">
         <h2><a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.series }}</a></h2>
         <p class="blog-list-meta">
           <span>{{ entry.date | date: "%B %-d, %Y" }}</span>
-          <span>Guide with sub-pages</span>
         </p>
         {% if entry.summary %}
         <p>{{ entry.summary }}</p>

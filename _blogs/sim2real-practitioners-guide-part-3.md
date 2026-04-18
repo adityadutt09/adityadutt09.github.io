@@ -59,6 +59,11 @@ A practical recipe:
 
 This loop exposes the student to its own state distribution and improves recovery behavior.
 
+<figure class="blog-figure">
+  <img src="/images/doorman_pipeline.png" alt="DoorMan three-phase pipeline: teacher RL, student distillation, and student bootstrapping">
+  <figcaption><strong>DoorMan three-phase training flow.</strong> Teacher PPO, DAgger distillation, and GRPO bootstrapping form a practical progression for vision-based students.</figcaption>
+</figure>
+
 <div id="architecture"></div>
 ## Visual encoders and policy architecture
 
@@ -68,6 +73,16 @@ For manipulation tasks, architecture choices usually matter as much as loss choi
 - **Temporal model:** LSTM/GRU improves action stability under partial observability and occlusion.
 - **Policy head:** keep output head simple and stable before adding auxiliary objectives.
 - **Visual randomization:** vary textures, lighting, camera perturbations, and distractors to reduce overfitting.
+
+<figure class="blog-figure">
+  <img src="/images/visual_randomization.png" alt="Visual randomization examples including image, lighting, material, and camera perturbations">
+  <figcaption><strong>Visual randomization stack.</strong> Image-level and renderer-level perturbations improve transfer by exposing the student to broad visual variation during training.</figcaption>
+</figure>
+
+<figure class="blog-figure">
+  <img src="/images/doorman_visual_dr.png" alt="Procedurally generated door variations used in DoorMan training">
+  <figcaption><strong>Task-specific procedural randomization.</strong> Door geometry and appearance variation helps the student generalize to previously unseen real-world instances.</figcaption>
+</figure>
 
 <div class="blog-callout success">
   <p><strong>Recommendation.</strong> Start with a small, reproducible student baseline and only scale encoder complexity after verifying data quality and label alignment.</p>
